@@ -6,8 +6,8 @@ import{tokenNotExpired} from 'angular2-jwt';
 import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
-    //url = 'http://localhost:3000/'; //for testing
-    url='';
+    url = 'http://localhost:3000/'; //for testing
+    //url='';
   authToken: any;
   user: any;  
   constructor(private http:Http) { }
@@ -25,7 +25,7 @@ export class AuthService {
   authenticateUser(user){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post(this.url + 'users/authenticate', user, {headers:headers})
+    return this.http.post(this.url+'users/authenticate', user, {headers:headers})
     .map(res=>res.json());
   }
 
