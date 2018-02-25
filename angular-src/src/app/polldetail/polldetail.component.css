@@ -1,0 +1,32 @@
+ul{
+    list-style-type: none;
+}
+ul li{
+    padding: 10px;
+    display: block;
+    font-weight: 600;
+    text-align: justify;
+}
+
+.poll-graphics li{
+    display: block;
+}
+
+.poll-graphics li svg, .poll-graphics li p{
+    display: inline;
+    vertical-align: middle;
+    
+}
+rect{
+    fill: rgb(252, 209, 18);
+    stroke: #f5f5f5;
+    stroke-width: 1px;
+}
+.radio, .radio-detail{
+    display: inline-block;
+    vertical-align: auto;
+}
+.asked-by{
+    text-align: right;
+    font-style: oblique;
+}

@@ -1,0 +1,22 @@
+.navbar{
+    background-color: rgb(22, 22, 22);
+}
+.container{
+    display: inline-block;
+  
+}
+.navbar ul{
+    display: inline-block;
+
+}
+
+.navbar ul li a{
+ color: #a3a3a3;
+}
+.navbar ul li a:hover{
+    color: rgb(47, 159, 163);
+  }
+
+.navbar ul li a:active{
+    color: rgb(47, 159, 163);
+}

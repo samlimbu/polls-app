@@ -1,0 +1,15 @@
+<div [formGroup]="detailForm">
+        <div class="form-group col-xs-6">
+            <input type="text" class="form-control" formControlName="detail">
+        
+            <small [hidden]="detailForm.controls.detail.valid" class="text-danger">
+                Detail is required
+            </small>
+        </div>
+        <!--
+        <div class="form-group col-xs-6">
+            <label>postcode</label>
+            <input type="text" class="form-control" formControlName="postcode">
+        </div>
+    -->
+    </div>

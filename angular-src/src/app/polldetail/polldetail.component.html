@@ -1,0 +1,36 @@
+<div *ngIf="this.ItemSelected">
+        
+        
+            <form #Form="ngForm" (ngSubmit)="updateForm(Form.value)" [hidden]="formHiddenStatus">
+                <ul>
+                    <li *ngFor="let ids of ItemSelected.options; let i=index">
+        
+                     <input type="radio" name="detail" value={{ids.detail}} [(ngModel)]="dummy">
+                    
+                        <p class="radio-detail">{{ids.detail}}</p>
+        
+                    </li>
+                </ul>
+                <button id="poll-button" type="submit" class="btn btn-primary" >Submit</button>
+                
+            </form>
+            
+            <div *ngIf="processStatus">
+                Updating...
+            </div>
+            <div *ngIf="resultDisplayStatus">
+                <ul class="poll-graphics">
+                    <li *ngFor="let ids of ItemSelected.options">
+        
+                        <svg attr.width.px="{{ids.count *3}}" height="20">
+                            <rect attr.width.px="{{ids.count *3}}" height="20" /> Sorry, your browser does not support inline SVG.
+                        </svg>
+                        <p>{{ids.detail}}: {{ids.count}}</p>
+                    </li>
+                </ul>
+                Total votes:{{totalCount}}
+            </div>
+            <div *ngIf="!processStatus">
+                <p class="asked-by">-- asked by {{ItemSelected.user}}</p>
+            </div>
+        </div>

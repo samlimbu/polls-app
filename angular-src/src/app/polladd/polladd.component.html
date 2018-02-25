@@ -1,0 +1,51 @@
+<div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="margin-20">
+              <h4>Add Question</h4>
+            </div>
+            <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+              <div class="form-group">
+                <label>question</label>
+                <input type="text" class="form-control" formControlName="question">
+                <small *ngIf="!myForm.controls.question.valid" class="text-danger">
+                    question is required (minimum 2 characters).
+                  </small>
+              </div>
+              <!--addresses-->
+              <div formArrayName="options">
+                <div *ngFor="let address of myForm.controls.options.controls; let i=index" class="panel panel-default">
+                        
+                  <div class="panel-heading">
+                    <span>Option {{i + 1}}</span>
+                    <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.options.controls.length > 1" (click)="removeOption(i)"></span>
+                  </div>
+                  <div class="panel-body" [formGroupName]="i">
+                    <Polladdoption [passvalue]="myForm.controls.options.controls[i]"></Polladdoption>
+                   
+                  </div>
+                </div>
+              </div>
+      
+              <div class="margin-20">
+                <a (click)="addOption()" style="cursor: default">
+                  Add another Option +
+                </a>
+              </div>
+      
+              <div class="margin-20">
+                <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>
+              </div>
+              <div class="clearfix"></div>
+    <!--
+              <div class="margin-20">
+                <div>myForm details:-</div>
+                <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
+                <pre>form value: <br>{{myForm.value | json}}</pre>
+              </div>
+            -->
+            </form>
+          </div>
+      
+        </div>
+      </div>

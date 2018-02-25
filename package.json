@@ -1,0 +1,32 @@
+{
+  "name": "polls-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samlimbu/polls-app.git"
+  },
+  "author": "sam limbu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samlimbu/polls-app/issues"
+  },
+  "homepage": "https://github.com/samlimbu/polls-app#readme",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.7.1"
+  }
+}
