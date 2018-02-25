@@ -1120,7 +1120,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AuthService = /** @class */ (function () {
     function AuthService(http) {
         this.http = http;
-        this.url = 'http://localhost:3000/'; //for testing
+        // url = 'http://localhost:3000/'; //for testing
+        this.url = '';
     }
     AuthService.prototype.getTestData = function () {
         return this.http.get(this.url + 'category')

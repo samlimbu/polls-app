@@ -6,8 +6,8 @@ import{tokenNotExpired} from 'angular2-jwt';
 import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
-    url = 'http://localhost:3000/'; //for testing
-   // url='';
+   // url = 'http://localhost:3000/'; //for testing
+    url='';
   authToken: any;
   user: any;  
   constructor(private http:Http) { }
