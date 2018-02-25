@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     questionAdd = null;
     showResult;
     answeredPoll = [];
+    loadingDataStatus = true;
     constructor(
         private pollsService: PollsService,
         private authService: AuthService,
@@ -37,7 +38,8 @@ export class HomeComponent implements OnInit {
         this.pollsService.getPollfromMlab()
             .subscribe(
             data => this.POLLSLIST = data,
-            error => alert(error)
+            error => alert(error),
+            ()=>this.loadingDataStatus = null
 
             );
 

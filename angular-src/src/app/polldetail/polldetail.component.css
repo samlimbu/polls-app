@@ -29,4 +29,10 @@ rect{
 .asked-by{
     text-align: right;
     font-style: oblique;
+    margin: 0 10% 2% 0;
+}
+
+.processStatus{
+    text-align: center;
+    margin: 4% 0 4% 0;
 }

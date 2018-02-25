@@ -1,14 +1,19 @@
+<div *ngIf="loadingDataStatus" class="loadingDataStatus">
+    loading data...
+</div>
+
+
 <div class="poll-container" *ngFor="let item of POLLSLIST; index as i">
-        <a (click)="selectedItem(item)">{{item.question}}</a>
-        <section class="poll-inner poll-inner-1">
-          <div *ngIf="ItemSelect && this.ItemSelect._id.$oid==item._id.$oid">
-               <app-polldetail [ItemSelected] = "this.ItemSelect"></app-polldetail>
-          </div>
-        </section>
-      
-      </div>
-      
-      <!--
+    <a (click)="selectedItem(item)">{{item.question}}</a>
+    <section class="poll-inner poll-inner-1">
+        <div class="polldetail-container" *ngIf="ItemSelect && this.ItemSelect._id.$oid==item._id.$oid">
+            <app-polldetail [ItemSelected]="this.ItemSelect"></app-polldetail>
+        </div>
+    </section>
+
+</div>
+
+<!--
       <div>
           <form #Form1 = "ngForm" (ngSubmit)="addForm(Form1.value)">
               _id<input type="text" name="f1a" [ngModel]="f1a">
@@ -18,11 +23,12 @@
           </form>
       </div>
       -->
- 
-      <button [disabled]="disabled" (click)="showPollAddtoogle()" class="btn btn-success">Add poll question</button>
-      <br>
-      
-      <div *ngIf="questionAdd">
+<div *ngIf="!loadingDataStatus">
+    <button [disabled]="disabled" (click)="showPollAddtoogle()" class="btn btn-success">Add New poll</button>
+</div>
+<br>
 
-              <app-polladd (someEvent)="reset()"></app-polladd>
-      </div>
+<div *ngIf="questionAdd">
+
+    <app-polladd (someEvent)="reset()"></app-polladd>
+</div>
