@@ -25,9 +25,7 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 
-app.get('/', (req, res, next)=>{
-     res.send('invalid endpoint');
-});
+
 
 app.get('/test', function(req,res,next){
      res.send('test');
@@ -38,6 +36,9 @@ app.use('/users',users);
 app.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname,'public/index.html'));
 })
+app.get('/', (req, res, next)=>{
+     res.send('invalid endpoint');
+});
 //heroku port: process.env.PORT || 8080
 const port = process.env.PORT || 3000;
 app.listen(port, ()=>{
