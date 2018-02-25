@@ -5,16 +5,20 @@ MEAN Stack project, where users can create polls and anyone can vote on the topi
 
 # Sample
 A live sample is available at: https://samlimbuheroku.herokuapp.com/
+username: demo
+password: demo
+
+or you can register yourself
 
 # Features
-Token Based Authentication
+Token Based Authentication, flash based messages feedback
 
 # Technologies
-Angular
-Angular CLI
-angular2-flash-messages
-bcryptjs
-jsonwebtoken
+Angular,
+Angular CLI,
+angular2-flash-messages,
+bcryptjs,
+jsonwebtoken,
 passport
 
 # Limitations
