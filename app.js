@@ -16,6 +16,7 @@ mongoose.connection.on('connected',()=>{
 
 const app=express(config.database);
 app.use(cors());
+app.use(express.static(path.join(__dirname,'public')));
 app.use(bodyParser.json());
 
 //passoport middleware
