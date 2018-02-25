@@ -11,7 +11,9 @@ password: demo
 or you can register yourself
 
 # Features
-Token Based Authentication, flash based messages feedback
+Token Based Authentication, 
+flash based messages feedback,
+only registered users can add poll
 
 # Technologies
 Angular,
