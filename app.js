@@ -30,8 +30,10 @@ app.get('/test', function(req,res,next){
      res.send('ok test');
 });
 app.post('/test', function(req,res,next){
-     console.log(req);
      console.log('***************************************************');
+     console.log(req);
+     console.log('>>>>>>>>>>>>>>>>>>>>');
+     console.log(req.headers);
      console.log(req.params);
      console.log(req.query);
      res.send('ok post');
