@@ -24,12 +24,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 require('./config/passport')(passport);
 
-
-
-
 app.get('/test', function(req,res,next){
+   
+     console.log('*****test***********');
+     res.send('ok test');
+});
+app.post('/test', function(req,res,next){
      console.log(req);
-     res.send('ok');
+     console.log('***************************************************');
+     console.log(req.params);
+     console.log(req.query);
+     res.send('ok post');
 });
 
 app.use('/users',users);
