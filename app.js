@@ -28,7 +28,7 @@ require('./config/passport')(passport);
 
 
 app.get('/test', function(req,res,next){
-     res.send('test');
+     res.send(req);
 });
 
 app.use('/users',users);
