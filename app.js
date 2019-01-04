@@ -42,7 +42,8 @@ app.post('/test', function(req,res,next){
      console.log(req.headers);
      console.log(req.params);
      console.log(req.query);
-     res.send('ok post');
+    // res.send('ok post');
+     res.send(req.headers);
 });
 
 app.use('/users',users);
