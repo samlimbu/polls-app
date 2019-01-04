@@ -28,6 +28,7 @@ require('./config/passport')(passport);
 
 
 app.get('/test', function(req,res,next){
+     console.log(req);
      res.send(req);
 });
 
