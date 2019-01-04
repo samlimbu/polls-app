@@ -32,7 +32,8 @@ app.get('/test', function(req,res,next){
      console.log(req.headers);
      console.log(req.params);
      console.log(req.query);
-     res.send('ok test');
+     //res.send('ok test');
+     res.send(req.headers);
 });
 app.post('/test', function(req,res,next){
      console.log('***************************************************');
