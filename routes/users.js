@@ -12,6 +12,8 @@ router.get('/status', (req, res, next)  => {
     });
   }
   // simulate token decoding
+  console.log('status...........');
+  console.log(req.headers);
   const header = req.headers.authorization.split(' ');
   const token = header[1];
   if (token === '1234567') {
