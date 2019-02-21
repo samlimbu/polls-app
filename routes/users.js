@@ -4,6 +4,26 @@ const passport = require('passport');
 const jwt=require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/users');
+//status
+app.get('/status', (req, res, next)  => {
+  if (!(req.headers && req.headers.authorization)) {
+    return res.status(400).json({
+      status: 'error'
+    });
+  }
+  // simulate token decoding
+  const header = req.headers.authorization.split(' ');
+  const token = header[1];
+  if (token === '1234567') {
+    res.status(200).json({
+      status: 'success',
+    });
+  } else {
+    res.status(401).json({
+      status: 'error'
+    });
+  }
+});
 //Register'
 
 
