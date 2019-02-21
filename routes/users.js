@@ -5,7 +5,7 @@ const jwt=require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/users');
 //status
-app.get('/status', (req, res, next)  => {
+router.get('/status', (req, res, next)  => {
   if (!(req.headers && req.headers.authorization)) {
     return res.status(400).json({
       status: 'error'
