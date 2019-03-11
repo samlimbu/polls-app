@@ -96,7 +96,7 @@ router.post('/change_password', (req, res, next) => {
     console.log('auth', auth[0]);
     const username = auth[0];
     const password = auth[1];
-    const newPassword = req.body.newPassword;
+    const newPassword = atob(req.body.newPassword);
     console.log(newPassword);
     User.getUserByUsername(username, (err, user) => {
         if (err) {
