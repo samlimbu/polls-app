@@ -46,10 +46,10 @@ router.post('/register',(req,res,next)=>{
 });
 //Authenticate
 router.post('/authenticate',(req,res,next)=>{
-     const username = req.body.username;
-     const password = req.body.password;
+     const auth = atob(req.body.auth).split(':');
+    const username = auth[0];
+    const password = auth[1];
      console.log(req.body);
-     console.log(username, password);
      User.getUserByUsername(username, (err,user)=>{
           if(err)
           {throw err}
