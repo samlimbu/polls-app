@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/samlimbu/polls-app#readme",
   "dependencies": {
+    "atob": "^2.1.2",
     "bcryptjs": "*",
     "body-parser": "*",
     "cors": "*",
