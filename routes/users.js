@@ -83,9 +83,56 @@ router.post('/authenticate',(req,res,next)=>{
 
      });
 });
+
 //profile 
 router.get('/profile',passport.authenticate('jwt',{session:false}),(req,res,next)=>{
      res.json({user: req.user});
 });
 
+
+router.post('/change_password', (req, res, next) => {
+    console.log('body', req.body);
+    const auth = atob(req.body.auth).split(':');
+    console.log('auth', auth[0]);
+    const username = auth[0];
+    const password = auth[1];
+    const newPassword = req.body.newPassword;
+    console.log(newPassword);
+    User.getUserByUsername(username, (err, user) => {
+        if (err) {
+            throw err
+        }
+        if (!user) {
+            return res.json({ sucess: false, msg: 'User not found' });
+        }
+        User.comparePassword(password, user.password, (err, isMatch) => {
+            if (err) throw err;
+            if (isMatch) {
+                console.log('isMatch', isMatch);
+                let newUser = new User({
+                    name: user.name,
+                    username: user.username,
+                    email: user.email,
+                    password: newPassword
+                });
+                User.changePassword(newUser,  (err, user) => {
+                    if (err) {
+                        res.json({ sucess: false, msg: 'failed to register user' });
+
+                    }
+                    else {
+                        res.json({ sucess: true, msg: 'user registered' });
+                    }
+                });
+            }
+            else {
+                return res.json({
+                    sucess: false,
+                    msg: 'wrong password'
+                });
+            }
+        });
+
+    });
+});
 module.exports =router;
