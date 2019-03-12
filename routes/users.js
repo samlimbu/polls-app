@@ -97,11 +97,11 @@ router.post('/change_password', (req, res, next) => {
                 });
                 User.changePassword(newUser,  (err, user) => {
                     if (err) {
-                        res.json({ sucess: false, msg: 'failed to register user' });
+                        return res.json({ sucess: false, msg: 'failed to change password' });
 
                     }
                     else {
-                        res.json({ sucess: true, msg: 'user registered' });
+                        return res.json({ sucess: true, msg: 'password change sucess' });
                     }
                 });
             }
