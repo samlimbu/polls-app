@@ -27,7 +27,7 @@ require('./config/passport')(passport);
 app.get('/test', function(req,res,next){
    
      console.log('*****test***********');
-     //console.log(req);
+     console.log(req);
      console.log('>>>>>>>>>>>>>>>>>>>>');
      console.log(req.headers);
      console.log(req.params);
@@ -37,11 +37,12 @@ app.get('/test', function(req,res,next){
 });
 app.post('/test', function(req,res,next){
      console.log('***************************************************');
-     //console.log(req);
+     console.log(req);
      console.log('>>>>>>>>>>>>>>>>>>>>');
      console.log(req.headers);
      console.log(req.params);
      console.log(req.query);
+     console.log(req.body);
     // res.send('ok post');
      res.send(req.headers);
 });
