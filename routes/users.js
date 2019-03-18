@@ -17,10 +17,10 @@ router.post('/register', (req, res, next) => {
     });
     User.addUser(newUser, (err, user) => {
         if (err) {
-            res.json({ sucess: false, msg: 'failed to register user' });
+            res.json({ success: false, msg: 'failed to register user' });
         }
         else {
-            res.json({ sucess: true, msg: 'user registered' });
+            res.json({ success: true, msg: 'user registered' });
         }
     });
 });
@@ -35,7 +35,7 @@ router.post('/authenticate', (req, res, next) => {
             throw err 
         }
         if (!user) {
-            return res.json({ sucess: false, msg: 'User not found' });
+            return res.json({ success: false, msg: 'User not found' });
         }
         User.comparePassword(password, user.password, (err, isMatch) => {
      
@@ -45,7 +45,7 @@ router.post('/authenticate', (req, res, next) => {
                     expiresIn: 604800 //1week in secs
                 });
                 res.json({
-                    sucess: true,
+                    success: true,
                     token: 'JWT ' + token,
                     user: {
                         id: user._id,
@@ -57,7 +57,7 @@ router.post('/authenticate', (req, res, next) => {
             }
             else {
                 return res.json({
-                    sucess: false,
+                    success: false,
                     msg: 'wrong password'
                 });
             }
@@ -83,7 +83,7 @@ router.post('/change_password', (req, res, next) => {
             throw err
         }
         if (!user) {
-            return res.json({ sucess: false, msg: 'User not found' });
+            return res.json({ success: false, msg: 'User not found' });
         }
         User.comparePassword(password, user.password, (err, isMatch) => {
             if (err) throw err;
