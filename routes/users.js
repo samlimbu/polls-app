@@ -26,7 +26,7 @@ router.post('/register', (req, res, next) => {
 });
 //Authenticate
 router.post('/authenticate', (req, res, next) => {
-
+    console.log(req.body);
     const auth = atob(req.body.auth).split(':');
     const username = auth[0];
     const password = auth[1];
