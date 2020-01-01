@@ -48,7 +48,7 @@ app.post('/test', function(req,res,next){
 });
 
 app.use('/users',users);
-//app.use('/category', categoryRouter);
+app.use('/category', categoryRouter);
 app.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname,'public/index.html'));
 })
