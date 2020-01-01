@@ -5,8 +5,8 @@ MEAN Stack project, where users can create polls and anyone can vote on the topi
 
 # Sample
 A live sample is available at: https://samlimbuheroku.herokuapp.com/
-username: demo
-password: demo
+username: admin
+password: admin
 
 or you can register yourself
 
